@@ -1,0 +1,1040 @@
+{
+    "data": {
+        "config": {
+            "card_header": {
+                "style": {
+                    ".": "ha-card {\n  margin: 10px 0px 0px 8px;\n  box-shadow: none;\n}\n",
+                    "ha-markdown": {
+                        "$": "h1 {\n  font-size: 15px !important;\n  font-weight: 500 !important;\n  padding: 0px 0px 0px 8px !important;\n  border-left: 3px solid rgba(0, 29, 44);\n  color: var(--card-header-text-color);\n}\n"
+                    }
+                }
+            },
+            "custom_header": {
+                "background": "var(--primary-background-color);",
+                "compact_mode": true,
+                "elements_color": "var(--primary-text-color);",
+                "tab_indicator_color": "var(--primary-text-color);"
+            },
+            "resources": [
+                {
+                    "type": "js",
+                    "url": "/local/vertical-stack-in-card.js?v=0.3.2"
+                },
+                {
+                    "type": "js",
+                    "url": "/local/clock-card.js"
+                },
+                {
+                    "type": "js",
+                    "url": "/local/locale/is.js"
+                },
+                {
+                    "type": "js",
+                    "url": "/local/locale/en-gb.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/local/simple-weather-card-bundle.js?v=0.8.0"
+                }
+            ],
+            "title": "Home",
+            "views": [
+                {
+                    "background": "var(--background-image)",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "content": "Home Assistant\n",
+                                    "style": "ha-card {\n  animation: fadeOutUp 1s ease-out;\n  box-shadow: none;\n  animation-delay: 2.5s;\n  animation-fill-mode: forwards;\n  margin: 12px 0px -50px 0px;\n  font-size: 20px !important;\n  font-weight: 500 !important;\n}\nha-markdown {\n  color: var(--card-header-text-color);\n  text-align: center;\n}\n@keyframes fadeOutUp {\n  from {\n    opacity: 0.7;\n  }\n  to {\n    opacity: 0;\n    -webkit-transform: translate3d(0, -22%, 0);\n    transform: translate3d(0, -22%, 0);\n  }\n}\n",
+                                    "type": "markdown"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "user",
+                                            "gridcol": "1 / 5",
+                                            "states": {
+                                                "Jose Herrera": {
+                                                    "content": "{% if now().hour < 5 %}\n  {{ [\n    'Good night, Jose',\n    'Have a great night!',\n    'See you tomorrow'\n    ] |random }}\n{% elif now().hour < 12 %}\n  {{ [\n    'Good morning, Jose',\n    \"It's a new day\", 'Good morning!',\n    'Have a great day'\n    ] |random }}\n{% elif now().hour < 17 %}\n  {{ [\n    'Good afternoon, Jose',\n    'Good afternoon!',\n    'Afternoon, Jose!',\n    \"Hope your afternoon's easy-breezy\"\n    ] |random }}\n{% else %}\n  {{ [\n    'Have a nice evening, Jose',\n    'Good evening!'\n    ] |random }}\n{% endif %}\n",
+                                                    "style": "ha-card {\n  animation: fadeInUp 1s ease-out;\n  box-shadow: none;\n  animation-delay: 2.75s;\n  animation-fill-mode: forwards;\n  opacity: 0;\n  margin: -18px 11px 5px 10px;\n  font-size: 20px !important;\n  font-weight: 500 !important;\n}\n@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    -webkit-transform: translate3d(0, 15%, 0);\n    transform: translate3d(0, 15%, 0);\n  }\n  to {\n    opacity: 1;\n    -webkit-transform: translate3d(0, 0, 0);\n    transform: translate3d(0, 0, 0);\n  }\n}\nha-markdown {\n  color: var(--app-header-text-color);\n}\n",
+                                                    "type": "markdown"
+                                                },
+                                                "Juan Ap\u00e9stegui": {
+                                                    "content": "{% if now().hour < 5 %}\n  {{ [\n    'Good night, Juan',\n    'Have a great night!',\n    'See you tomorrow'\n    ] |random }}\n{% elif now().hour < 12 %}\n  {{ [\n    'Good morning, Juan',\n    \"It's a new day\", 'Good morning!',\n    'Have a great day'\n    ] |random }}\n{% elif now().hour < 17 %}\n  {{ [\n    'Good afternoon, Juan',\n    'Good afternoon!',\n    'Afternoon, Juan!',\n    \"Hope your afternoon's easy-breezy\"\n    ] |random }}\n{% else %}\n  {{ [\n    'Have a nice evening, Juan',\n    'Good evening!'\n    ] |random }}\n{% endif %}\n",
+                                                    "style": "ha-card {\n  animation: fadeInUp 1s ease-out;\n  box-shadow: none;\n  animation-delay: 2.75s;\n  animation-fill-mode: forwards;\n  opacity: 0;\n  margin: -18px 11px 5px 10px;\n  font-size: 20px !important;\n  font-weight: 500 !important;\n}\n@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    -webkit-transform: translate3d(0, 15%, 0);\n    transform: translate3d(0, 15%, 0);\n  }\n  to {\n    opacity: 1;\n    -webkit-transform: translate3d(0, 0, 0);\n    transform: translate3d(0, 0, 0);\n  }\n}\nha-markdown {\n  color: var(--app-header-text-color);\n}\n",
+                                                    "type": "markdown"
+                                                }
+                                            },
+                                            "type": "custom:state-switch"
+                                        },
+                                        {
+                                            "entity": "user",
+                                            "gridcol": "5 / 5",
+                                            "states": {
+                                                "Jose Herrera": {
+                                                    "image": "/local/jose.png",
+                                                    "style": "ha-card {\n  animation: fadeInUp 1s ease-out;\n  animation-delay: 2.75s;\n  animation-fill-mode: forwards;\n  opacity: 0;\n  width: 36px;\n  margin-left: auto;\n  margin-right: 16px;\n  margin-top: -10px;\n  box-shadow: none;\n}\n@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    -webkit-transform: translate3d(0, 15%, 0);\n    transform: translate3d(0, 15%, 0);\n  }\n  to {\n    opacity: 1;\n    -webkit-transform: translate3d(0, 0, 0);\n    transform: translate3d(0, 0, 0);\n  }\n}\n",
+                                                    "tap_action": {
+                                                        "action": "call-service",
+                                                        "service": "browser_mod.lovelace_reload"
+                                                    },
+                                                    "type": "picture"
+                                                },
+                                                "Juan Ap\u00e9stegui": {
+                                                    "image": "/local/juan.png",
+                                                    "style": "ha-card {\n  animation: fadeInUp 1s ease-out;\n  animation-delay: 2.75s;\n  animation-fill-mode: forwards;\n  opacity: 0;\n  width: 36px;\n  margin-left: auto;\n  margin-right: 16px;\n  margin-top: -10px;\n  box-shadow: none;\n\n}\n@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    -webkit-transform: translate3d(0, 15%, 0);\n    transform: translate3d(0, 15%, 0);\n  }\n  to {\n    opacity: 1;\n    -webkit-transform: translate3d(0, 0, 0);\n    transform: translate3d(0, 0, 0);\n  }\n}\n",
+                                                    "tap_action": {
+                                                        "action": "call-service",
+                                                        "service": "browser_mod.lovelace_reload"
+                                                    },
+                                                    "type": "picture"
+                                                }
+                                            },
+                                            "type": "custom:state-switch"
+                                        }
+                                    ],
+                                    "layout": "grid",
+                                    "type": "custom:layout-card"
+                                },
+                                {
+                                    "content": "{% if now().month in (1,) %}\n  # TODAY - January {{ now().day }}\n{% elif now().month in (2,) %}\n  # TODAY - February {{ now().day }}\n{% elif now().month in (3,) %}\n  # TODAY - March {{ now().day }}\n{% elif now().month in (4,) %}\n  # TODAY - April {{ now().day }}\n{% elif now().month in (5,) %}\n  # TODAY - May {{ now().day }}\n{% elif now().month in (6,) %}\n  # TODAY - June {{ now().day }}\n{% elif now().month in (7,) %}\n  # TODAY - July {{ now().day }}\n{% elif now().month in (8,) %}\n  # TODAY - August {{ now().day }}\n{% elif now().month in (9,) %}\n  # TODAY - September {{ now().day }}\n{% elif now().month in (10,) %}\n     # TODAY - October {{ now().day }}\n   {% elif now().month in (11,) %}\n     # TODAY - November {{ now().day }}\n   {% elif now().month in (12,) %}\n     # TODAY - December {{ now().day }}\n   {% endif %}\n",
+                                    "style": {
+                                        ".": "ha-card {\n  margin: 10px 0px 0px 0px;\n  box-shadow: none;\n}\n",
+                                        "ha-markdown": {
+                                            "$": "h1 {\n  font-size: 20px !important;\n  font-weight: 500 !important;\n  padding: 0px 0px 0px 8px !important;\n  border-left: 3px solid #ffcc00;\n  color: var(--card-header-text-color);\n}\n"
+                                        }
+                                    },
+                                    "type": "markdown"
+                                },
+                                {
+                                    "custom": [
+                                        {
+                                            "high": "sensor.xiaomi_airpurifier_temp"
+                                        }
+                                    ],
+                                    "entity": "weather.home",
+                                    "name": "outside the house",
+                                    "style": "ha-card {\n    background-color: var(--primary-background-color) !important;\n    border-radius: 15px;\n    margin: 10px;\n    margin-bottom: -10px;\n    margin-top: -10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }    \n.mmp__bg {\nbackground: none !important;\nborder-radius: 15px !important;\n }  \n.mmp__container {\nborder-radius: 15px !important;\n } \n",
+                                    "type": "custom:simple-weather-card"
+                                },
+                                {
+                                    "content": "# Scenes\n",
+                                    "style": {
+                                        ".": "ha-card {\n  margin: 10px 0px 0px 0px;\n  box-shadow: none;\n}\n",
+                                        "ha-markdown": {
+                                            "$": "h1 {\n  font-size: 20px !important;\n  font-weight: 500 !important;\n  padding: 0px 0px 0px 8px !important;\n  border-left: 3px solid #ffcc00;\n  color: var(--card-header-text-color);\n}\n"
+                                        }
+                                    },
+                                    "type": "markdown"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "input_select.scene_selection",
+                                            "icon": "mdi:weather-sunny",
+                                            "show_name": false,
+                                            "state": [
+                                                {
+                                                    "color": "rgb(235, 161, 52)",
+                                                    "value": "Let there be light"
+                                                }
+                                            ],
+                                            "style": "ha-card {\nbackground-color: var(--primary-background-color);\nborder-radius: 15px;\nheight: 60px;\nmargin: 10px;\nmax-width: 90%;         \n  box-shadow: \n    {% if is_state('sun.sun', 'above_horizon') and is_state('input_select.scene_selection', 'Let there be light') %}\n      inset -4px -4px 8px 0 rgba(255,255,255,.5), inset 4px 4px 8px 0 rgba(0,0,0,.03);\n    {% elif is_state('sun.sun', 'above_horizon') and not is_state('input_select.scene_selection', 'Let there be light') %}           \n      -5px -5px 8px 0 rgba(255,255,255,.5),5px 5px 8px 0 rgba(0,0,0,.03);\n    {% elif is_state('sun.sun', 'below_horizon') and is_state('input_select.scene_selection', 'Let there be light') %}            \n      inset -4px -4px 10px 0 rgba(50, 50, 50,.5), inset 4px 4px 12px 0 rgba(0,0,0,.3); \n    {% elif is_state('sun.sun', 'below_horizon') and not is_state('input_select.scene_selection', 'Let there be light') %}  \n      -5px -5px 8px 0 rgba(50, 50, 50,.5),5px 5px 8px 0 rgba(0,0,0,.15);\n    {% endif %}                           \n}\n",
+                                            "styles": {
+                                                "card": [
+                                                    {
+                                                        "height": "50px"
+                                                    },
+                                                    {
+                                                        "border-radius": "15px"
+                                                    },
+                                                    {
+                                                        "padding-top": "10px"
+                                                    },
+                                                    {
+                                                        "padding-bottom": "10px"
+                                                    },
+                                                    {
+                                                        "background-color": "var(--primary-background-color)"
+                                                    }
+                                                ]
+                                            },
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "haptic": "light",
+                                                "service": "input_select.select_option",
+                                                "service_data": {
+                                                    "entity_id": "input_select.scene_selection",
+                                                    "option": "Let there be light"
+                                                }
+                                            },
+                                            "type": "custom:button-card"
+                                        },
+                                        {
+                                            "entity": "input_select.scene_selection",
+                                            "icon": "mdi:television",
+                                            "show_name": false,
+                                            "state": [
+                                                {
+                                                    "color": "rgb(0,128,128)",
+                                                    "value": "Set the mood"
+                                                }
+                                            ],
+                                            "style": "ha-card {\nbackground-color: var(--primary-background-color);\nborder-radius: 15px;\nheight: 60px;\nmargin: 10px;\nmax-width: 90%;         \nbox-shadow: \n  {% if is_state('sun.sun', 'above_horizon') and is_state('input_select.scene_selection', 'Set the mood') %}\n    inset -4px -4px 8px 0 rgba(255,255,255,.5), inset 4px 4px 8px 0 rgba(0,0,0,.03);\n  {% elif is_state('sun.sun', 'above_horizon') and not is_state('input_select.scene_selection', 'Set the mood') %}           \n    -5px -5px 8px 0 rgba(255,255,255,.5),5px 5px 8px 0 rgba(0,0,0,.03);\n  {% elif is_state('sun.sun', 'below_horizon') and is_state('input_select.scene_selection', 'Set the mood') %}            \n    inset -4px -4px 10px 0 rgba(50, 50, 50,.5), inset 4px 4px 12px 0 rgba(0,0,0,.3); \n  {% elif is_state('sun.sun', 'below_horizon') and not is_state('input_select.scene_selection', 'Set the mood') %}  \n    -5px -5px 8px 0 rgba(50, 50, 50,.5),5px 5px 8px 0 rgba(0,0,0,.15);\n  {% endif %}                             \n}\n",
+                                            "styles": {
+                                                "card": [
+                                                    {
+                                                        "height": "50px"
+                                                    },
+                                                    {
+                                                        "border-radius": "15px"
+                                                    },
+                                                    {
+                                                        "padding-top": "10px"
+                                                    },
+                                                    {
+                                                        "padding-bottom": "10px"
+                                                    },
+                                                    {
+                                                        "background-color": "var(--primary-background-color)"
+                                                    }
+                                                ],
+                                                "icon": null
+                                            },
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "haptic": "light",
+                                                "service": "input_select.select_option",
+                                                "service_data": {
+                                                    "entity_id": "input_select.scene_selection",
+                                                    "option": "Set the mood"
+                                                }
+                                            },
+                                            "type": "custom:button-card"
+                                        },
+                                        {
+                                            "entity": "input_boolean.am_i_on_call",
+                                            "hold_action": {
+                                                "action": "more-info",
+                                                "haptic": "medium"
+                                            },
+                                            "margin": "10px;",
+                                            "name": "Meeting Mode",
+                                            "show_name": false,
+                                            "state": [
+                                                {
+                                                    "color": "#008bef",
+                                                    "value": "on"
+                                                },
+                                                {
+                                                    "color": "var(--primary-text-color)",
+                                                    "value": "off"
+                                                }
+                                            ],
+                                            "style": "ha-card {\nborder-radius: 15px;\nheight: 60px;\nmargin: 10px;\nmax-width: 90%;         \n  box-shadow: \n    {% if is_state('sun.sun', 'above_horizon') and is_state('input_boolean.am_i_on_call', 'on') %}\n      inset -4px -4px 8px 0 rgba(255,255,255,.5), inset 4px 4px 8px 0 rgba(0,0,0,.03);\n    {% elif is_state('sun.sun', 'above_horizon') and is_state('input_boolean.am_i_on_call', 'off') %}                      \n      -5px -5px 8px 0 rgba(255,255,255,.5),5px 5px 8px 0 rgba(0,0,0,.03);\n    {% elif is_state('sun.sun', 'below_horizon') and is_state('input_boolean.am_i_on_call', 'on') %}                      \n      inset -4px -4px 10px 0 rgba(50, 50, 50,.5), inset 4px 4px 12px 0 rgba(0,0,0,.3); \n    {% elif is_state('sun.sun', 'below_horizon') and is_state('input_boolean.am_i_on_call', 'off') %}   \n      -5px -5px 8px 0 rgba(50, 50, 50,.5),5px 5px 8px 0 rgba(0,0,0,.15);\n    {% endif %}                           \n}\n",
+                                            "styles": {
+                                                "card": [
+                                                    {
+                                                        "height": "50px"
+                                                    },
+                                                    {
+                                                        "border-radius": "15px"
+                                                    },
+                                                    {
+                                                        "padding-top": "10px"
+                                                    },
+                                                    {
+                                                        "padding-bottom": "10px"
+                                                    },
+                                                    {
+                                                        "background-color": "var(--primary-background-color)"
+                                                    }
+                                                ],
+                                                "icon": null
+                                            },
+                                            "tap_action": {
+                                                "action": "toggle",
+                                                "haptic": "light"
+                                            },
+                                            "type": "custom:button-card"
+                                        }
+                                    ],
+                                    "column_width": "33%",
+                                    "layout": "horizontal",
+                                    "min_columns": 3,
+                                    "title": "Scenes",
+                                    "type": "custom:layout-card"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "input_select.scene_selection",
+                                            "icon": "mdi:bed-empty",
+                                            "show_name": false,
+                                            "state": [
+                                                {
+                                                    "color": "rgb(231, 76, 60)",
+                                                    "value": "Ready for bed"
+                                                }
+                                            ],
+                                            "style": "ha-card {\nbackground-color: var(--primary-background-color);\nborder-radius: 15px;\nheight: 60px;\nmargin: 10px;\nmax-width: 90%;         \n  box-shadow: \n    {% if is_state('sun.sun', 'above_horizon') and is_state('input_select.scene_selection', 'Ready for bed') %}\n      inset -4px -4px 8px 0 rgba(255,255,255,.5), inset 4px 4px 8px 0 rgba(0,0,0,.03);\n    {% elif is_state('sun.sun', 'above_horizon') and not is_state('input_select.scene_selection', 'Ready for bed') %}           \n      -5px -5px 8px 0 rgba(255,255,255,.5),5px 5px 8px 0 rgba(0,0,0,.03);\n    {% elif is_state('sun.sun', 'below_horizon') and is_state('input_select.scene_selection', 'Ready for bed') %}            \n      inset -4px -4px 10px 0 rgba(50, 50, 50,.5), inset 4px 4px 12px 0 rgba(0,0,0,.3); \n    {% elif is_state('sun.sun', 'below_horizon') and not is_state('input_select.scene_selection', 'Ready for bed') %}  \n      -5px -5px 8px 0 rgba(50, 50, 50,.5),5px 5px 8px 0 rgba(0,0,0,.15);\n    {% endif %}                           \n}\n",
+                                            "styles": {
+                                                "card": [
+                                                    {
+                                                        "height": "50px"
+                                                    },
+                                                    {
+                                                        "border-radius": "15px"
+                                                    },
+                                                    {
+                                                        "padding-top": "10px"
+                                                    },
+                                                    {
+                                                        "padding-bottom": "10px"
+                                                    },
+                                                    {
+                                                        "background-color": "var(--primary-background-color)"
+                                                    }
+                                                ],
+                                                "icon": null
+                                            },
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "haptic": "light",
+                                                "service": "input_select.select_option",
+                                                "service_data": {
+                                                    "entity_id": "input_select.scene_selection",
+                                                    "option": "Ready for bed"
+                                                }
+                                            },
+                                            "type": "custom:button-card"
+                                        },
+                                        {
+                                            "entity": "input_select.scene_selection",
+                                            "icon": "mdi:brightness-4",
+                                            "show_name": false,
+                                            "state": [
+                                                {
+                                                    "color": "#f9a600",
+                                                    "value": "Night light"
+                                                }
+                                            ],
+                                            "style": "ha-card {\nbackground-color: var(--primary-background-color);\nborder-radius: 15px;\nheight: 60px;\nmargin: 10px;\nmax-width: 90%;         \n  box-shadow: \n    {% if is_state('sun.sun', 'above_horizon') and is_state('input_select.scene_selection', 'Night light') %}\n      inset -4px -4px 8px 0 rgba(255,255,255,.5), inset 4px 4px 8px 0 rgba(0,0,0,.03);\n    {% elif is_state('sun.sun', 'above_horizon') and not is_state('input_select.scene_selection', 'Night light') %}           \n      -5px -5px 8px 0 rgba(255,255,255,.5),5px 5px 8px 0 rgba(0,0,0,.03);\n    {% elif is_state('sun.sun', 'below_horizon') and is_state('input_select.scene_selection', 'Night light') %}            \n      inset -4px -4px 10px 0 rgba(50, 50, 50,.5), inset 4px 4px 12px 0 rgba(0,0,0,.3); \n    {% elif is_state('sun.sun', 'below_horizon') and not is_state('input_select.scene_selection', 'Night light') %}  \n      -5px -5px 8px 0 rgba(50, 50, 50,.5),5px 5px 8px 0 rgba(0,0,0,.15);\n    {% endif %}                           \n}\n",
+                                            "styles": {
+                                                "card": [
+                                                    {
+                                                        "height": "50px"
+                                                    },
+                                                    {
+                                                        "border-radius": "15px"
+                                                    },
+                                                    {
+                                                        "padding-top": "10px"
+                                                    },
+                                                    {
+                                                        "padding-bottom": "10px"
+                                                    },
+                                                    {
+                                                        "background-color": "var(--primary-background-color)"
+                                                    }
+                                                ],
+                                                "icon": null
+                                            },
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "haptic": "light",
+                                                "service": "input_select.select_option",
+                                                "service_data": {
+                                                    "entity_id": "input_select.scene_selection",
+                                                    "option": "Night light"
+                                                }
+                                            },
+                                            "type": "custom:button-card"
+                                        },
+                                        {
+                                            "entity": "input_select.scene_selection",
+                                            "hold_action": {
+                                                "action": "more-info",
+                                                "haptic": "medium"
+                                            },
+                                            "icon": "mdi:flashlight-off",
+                                            "show_name": false,
+                                            "state": [
+                                                {
+                                                    "color": "rgb(255,140,0)",
+                                                    "value": "All lights off"
+                                                }
+                                            ],
+                                            "style": "ha-card {\nbackground-color: var(--primary-background-color);\nborder-radius: 15px;\nheight: 60px;\nmargin: 10px;\nmax-width: 90%;         \n  box-shadow: \n    {% if is_state('sun.sun', 'above_horizon') and is_state('input_select.scene_selection', 'All lights off') %}\n      inset -4px -4px 8px 0 rgba(255,255,255,.5), inset 4px 4px 8px 0 rgba(0,0,0,.03);\n    {% elif is_state('sun.sun', 'above_horizon') and not is_state('input_select.scene_selection', 'All lights off') %}                      \n      -5px -5px 8px 0 rgba(255,255,255,.5),5px 5px 8px 0 rgba(0,0,0,.03);\n    {% elif is_state('sun.sun', 'below_horizon') and is_state('input_select.scene_selection', 'All lights off') %}                      \n      inset -4px -4px 10px 0 rgba(50, 50, 50,.5), inset 4px 4px 12px 0 rgba(0,0,0,.3); \n    {% elif is_state('sun.sun', 'below_horizon') and not is_state('input_select.scene_selection', 'All lights off') %}   \n      -5px -5px 8px 0 rgba(50, 50, 50,.5),5px 5px 8px 0 rgba(0,0,0,.15);\n    {% endif %}                           \n}\n",
+                                            "styles": {
+                                                "card": [
+                                                    {
+                                                        "height": "50px"
+                                                    },
+                                                    {
+                                                        "border-radius": "15px"
+                                                    },
+                                                    {
+                                                        "padding-top": "10px"
+                                                    },
+                                                    {
+                                                        "padding-bottom": "10px"
+                                                    },
+                                                    {
+                                                        "background-color": "var(--primary-background-color)"
+                                                    }
+                                                ],
+                                                "icon": null
+                                            },
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "haptic": "light",
+                                                "service": "input_select.select_option",
+                                                "service_data": {
+                                                    "entity_id": "input_select.scene_selection",
+                                                    "option": "All lights off"
+                                                }
+                                            },
+                                            "type": "custom:button-card"
+                                        }
+                                    ],
+                                    "column_width": "33%",
+                                    "layout": "horizontal",
+                                    "min_columns": 3,
+                                    "type": "custom:layout-card"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "content": "# Media\n",
+                                    "style": {
+                                        ".": "ha-card {\n  margin: 10px 0px 0px 0px;\n  box-shadow: none;\n}\n",
+                                        "ha-markdown": {
+                                            "$": "h1 {\n  font-size: 20px !important;\n  font-weight: 500 !important;\n  padding: 0px 0px 0px 8px !important;\n  border-left: 3px solid #ffcc00;\n  color: var(--card-header-text-color);\n}\n"
+                                        }
+                                    },
+                                    "type": "markdown"
+                                },
+                                {
+                                    "entity": "media_player.beemo",
+                                    "hide": {
+                                        "controls": true,
+                                        "mute": false,
+                                        "power_state": false,
+                                        "source": true
+                                    },
+                                    "icon": "mdi:television",
+                                    "info": "short",
+                                    "style": "ha-card {\n    background-color: var(--primary-background-color) !important;\n    border-radius: 15px;\n    margin: 10px;\n    margin-bottom: -10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }    \n.mmp__bg {\nbackground: none !important;\nborder-radius: 15px !important;\n }  \n.mmp__container {\nborder-radius: 15px !important;\n } \n",
+                                    "type": "custom:mini-media-player",
+                                    "volume_stateless": true
+                                },
+                                {
+                                    "entity": "media_player.android_tv_1",
+                                    "hide": null,
+                                    "style": "ha-card {\n    background-color: var(--primary-background-color) !important;\n    border-radius: 15px;\n    margin: 10px;\n    margin-bottom: -10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }    \n.mmp__bg {\nbackground: none !important;\nborder-radius: 15px !important;\n }  \n.mmp__container {\nborder-radius: 15px !important;\n } \n",
+                                    "type": "custom:mini-media-player"
+                                },
+                                {
+                                    "artwork": "cover",
+                                    "controls": true,
+                                    "entity": "media_player.playstation_4",
+                                    "hide": {
+                                        "controls": true,
+                                        "volume": true
+                                    },
+                                    "style": "ha-card {\n    background-color: var(--primary-background-color) !important;\n    border-radius: 15px;\n    margin: 10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }    \n.mmp__bg {\nbackground: none !important;\nborder-radius: 15px !important;\n }  \n.mmp__container {\nborder-radius: 15px !important;\n } \n",
+                                    "type": "custom:mini-media-player"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "content": "# Music\n",
+                                    "style": {
+                                        ".": "ha-card {\n  margin: 10px 0px 0px 0px;\n  box-shadow: none;\n}\n",
+                                        "ha-markdown": {
+                                            "$": "h1 {\n  font-size: 20px !important;\n  font-weight: 500 !important;\n  padding: 0px 0px 0px 8px !important;\n  border-left: 3px solid #ffcc00;\n  color: var(--card-header-text-color);\n}\n"
+                                        }
+                                    },
+                                    "type": "markdown"
+                                },
+                                {
+                                    "entity": "media_player.house",
+                                    "hide": {
+                                        "power": true
+                                    },
+                                    "info": "short",
+                                    "source": "icon",
+                                    "style": "ha-card {\n    background-color: var(--primary-background-color) !important;\n    border-radius: 15px;\n    margin: 10px;\n    margin-bottom: -10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }    \n.mmp__bg {\nbackground: none !important;\nborder-radius: 15px !important;\n }  \n.mmp__container {\nborder-radius: 15px !important;\n } \n",
+                                    "type": "custom:mini-media-player"
+                                },
+                                {
+                                    "artwork": "cover",
+                                    "entity": "media_player.living_room_speaker",
+                                    "hide": {
+                                        "controls": true
+                                    },
+                                    "style": "ha-card {\n    background-color: var(--primary-background-color) !important;\n    border-radius: 15px;\n    margin: 10px;\n    margin-bottom: -10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }    \n.mmp__bg {\nbackground: none !important;\nborder-radius: 15px !important;\n }  \n.mmp__container {\nborder-radius: 15px !important;\n } \n",
+                                    "type": "custom:mini-media-player"
+                                },
+                                {
+                                    "artwork": "cover",
+                                    "entity": "media_player.android_tv",
+                                    "hide": {
+                                        "controls": true
+                                    },
+                                    "style": "ha-card {\n    background-color: var(--primary-background-color) !important;\n    border-radius: 15px;\n    margin: 10px;\n    margin-bottom: -10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }    \n.mmp__bg {\nbackground: none !important;\nborder-radius: 15px !important;\n }  \n.mmp__container {\nborder-radius: 15px !important;\n } \n",
+                                    "type": "custom:mini-media-player"
+                                },
+                                {
+                                    "artwork": "cover",
+                                    "entity": "media_player.bedroom_speaker",
+                                    "hide": {
+                                        "controls": true
+                                    },
+                                    "style": "ha-card {\n    background-color: var(--primary-background-color) !important;\n    border-radius: 15px;\n    margin: 10px;\n    margin-bottom: -10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }    \n.mmp__bg {\nbackground: none !important;\nborder-radius: 15px !important;\n }  \n.mmp__container {\nborder-radius: 15px !important;\n } \n",
+                                    "type": "custom:mini-media-player"
+                                },
+                                {
+                                    "artwork": "cover",
+                                    "entity": "media_player.bathroom_speaker",
+                                    "hide": {
+                                        "controls": true
+                                    },
+                                    "style": "ha-card {\n    background-color: var(--primary-background-color) !important;\n    border-radius: 15px;\n    margin: 10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }    \n.mmp__bg {\nbackground: none !important;\nborder-radius: 15px !important;\n }  \n.mmp__container {\nborder-radius: 15px !important;\n } \n",
+                                    "type": "custom:mini-media-player"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "content": "# Fan Control\n",
+                                    "style": {
+                                        ".": "ha-card {\n  margin: 10px 0px 0px 0px;\n  box-shadow: none;\n}\n",
+                                        "ha-markdown": {
+                                            "$": "h1 {\n  font-size: 20px !important;\n  font-weight: 500 !important;\n  padding: 0px 0px 0px 8px !important;\n  border-left: 3px solid #ffcc00;\n  color: var(--card-header-text-color);\n}\n"
+                                        }
+                                    },
+                                    "type": "markdown"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entities": null,
+                                            "entity": "fan.living_room_fan",
+                                            "name": "Living Room Fan",
+                                            "show_state": false,
+                                            "state_color": true,
+                                            "type": "custom:multiple-entity-row"
+                                        },
+                                        {
+                                            "entities": [
+                                                {
+                                                    "entity": "fan.living_room_fan",
+                                                    "icon": "mdi:power",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    }
+                                                },
+                                                {
+                                                    "entity": "switch.fan_speed",
+                                                    "icon": "mdi:weather-windy",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    }
+                                                },
+                                                {
+                                                    "entity": "switch.fan_osci",
+                                                    "icon": "mdi:sync",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    }
+                                                },
+                                                {
+                                                    "entity": "switch.fan_cool_on",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    }
+                                                }
+                                            ],
+                                            "show_name": false,
+                                            "show_state": false,
+                                            "type": "glance"
+                                        }
+                                    ],
+                                    "mode": "horizontal",
+                                    "style": "ha-card { \n  padding-left: 20px !important;\n        background-color: var(--primary-background-color);\n    border-radius: 15px;\n    margin: 10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n       }  \n   \n",
+                                    "type": "custom:stack-in-card"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "content": "# Lights\n",
+                                    "style": {
+                                        ".": "ha-card {\n  margin: 10px 0px 0px 0px;\n  box-shadow: none;\n}\n",
+                                        "ha-markdown": {
+                                            "$": "h1 {\n  font-size: 20px !important;\n  font-weight: 500 !important;\n  padding: 0px 0px 0px 8px !important;\n  border-left: 3px solid #ffcc00;\n  color: var(--card-header-text-color);\n}\n"
+                                        }
+                                    },
+                                    "type": "markdown"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entities": [
+                                                {
+                                                    "entity": "light.kitchen_light"
+                                                },
+                                                {
+                                                    "entity": "light.26407235c82b96532c1b"
+                                                },
+                                                {
+                                                    "entity": "light.26407235d8f15bae8493"
+                                                },
+                                                {
+                                                    "entity": "light.26407235d8f15bd44db6"
+                                                },
+                                                {
+                                                    "entity": "light.53424715d8f15bd45086"
+                                                },
+                                                {
+                                                    "entity": "light.standing_lamp"
+                                                }
+                                            ],
+                                            "style": ".card-header{\n font-size: 16px;\n    }       \n",
+                                            "title": "Living Room + Kitchen",
+                                            "type": "entities"
+                                        },
+                                        {
+                                            "entities": [
+                                                {
+                                                    "style": {
+                                                        "background": "#62717b",
+                                                        "height": "1px",
+                                                        "margin-left": "auto",
+                                                        "margin-right": "auto",
+                                                        "width": "95%"
+                                                    },
+                                                    "type": "divider"
+                                                }
+                                            ],
+                                            "type": "entities"
+                                        },
+                                        {
+                                            "entities": [
+                                                {
+                                                    "entity": "light.bookshelf_lamp"
+                                                },
+                                                {
+                                                    "entity": "light.juan_s_bedside_lamp"
+                                                },
+                                                {
+                                                    "entity": "light.05604034f4cfa24b0e77"
+                                                }
+                                            ],
+                                            "style": ".card-header{\n font-size: 16px;\n margin-top: -10px;\n    }        \n",
+                                            "title": "Bedroom",
+                                            "type": "entities"
+                                        }
+                                    ],
+                                    "style": "ha-card { \n  padding-left: 20px !important;\n        background-color: var(--primary-background-color);\n    border-radius: 15px;\n    margin: 10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n       }     \n",
+                                    "type": "custom:stack-in-card"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "content": "# Air Purifier\n",
+                                    "style": {
+                                        ".": "ha-card {\n  margin: 10px 0px 0px 0px;\n  box-shadow: none;\n}\n",
+                                        "ha-markdown": {
+                                            "$": "h1 {\n  font-size: 20px !important;\n  font-weight: 500 !important;\n  padding: 0px 0px 0px 8px !important;\n  border-left: 3px solid #ffcc00;\n  color: var(--card-header-text-color);\n}\n"
+                                        }
+                                    },
+                                    "type": "markdown"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "fan.xiaomi_air_purifier_2s"
+                                        },
+                                        {
+                                            "entity": "input_select.xiaomi_airpurifier_mode"
+                                        },
+                                        {
+                                            "entity": "input_number.xiaomi_airpurifier_favorite_level",
+                                            "name": "Manual mode"
+                                        },
+                                        {
+                                            "entity": "switch.xiaomi_airpurifier_child_lock"
+                                        },
+                                        {
+                                            "entity": "switch.xiaomi_airpurifier_led"
+                                        },
+                                        {
+                                            "entity": "switch.xiaomi_airpurifier_buzzer"
+                                        },
+                                        {
+                                            "entity": "sensor.xiaomi_airpurifier_speed"
+                                        },
+                                        {
+                                            "entity": "sensor.xiaomi_airpurifier_filter_remaining"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "style": "ha-card {\n    background-color: var(--primary-background-color);\n    border-radius: 15px;\n    margin: 10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }    \n",
+                                    "type": "entities"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "content": "# Vacuum\n",
+                                    "style": {
+                                        ".": "ha-card {\n  margin: 10px 0px 0px 0px;\n  box-shadow: none;\n}\n",
+                                        "ha-markdown": {
+                                            "$": "h1 {\n  font-size: 20px !important;\n  font-weight: 500 !important;\n  padding: 0px 0px 0px 8px !important;\n  border-left: 3px solid #ffcc00;\n  color: var(--card-header-text-color);\n}\n"
+                                        }
+                                    },
+                                    "type": "markdown"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entities": [
+                                                {
+                                                    "entities": [
+                                                        {
+                                                            "attribute": "status",
+                                                            "name": "Status"
+                                                        },
+                                                        {
+                                                            "attribute": "battery_level",
+                                                            "name": "Battery",
+                                                            "unit": "%"
+                                                        }
+                                                    ],
+                                                    "entity": "vacuum.paddington",
+                                                    "name": "Paddington",
+                                                    "show_state": false,
+                                                    "state_color": true,
+                                                    "type": "custom:multiple-entity-row"
+                                                }
+                                            ],
+                                            "style": "ha-card {\n  height: 70px;\n}\n",
+                                            "type": "entities"
+                                        },
+                                        {
+                                            "cards": [
+                                                {
+                                                    "color": "auto",
+                                                    "entity": "vacuum.paddington",
+                                                    "icon": "mdi:play",
+                                                    "show_name": false,
+                                                    "size": "25%",
+                                                    "tap_action": {
+                                                        "action": "call-service",
+                                                        "service": "vacuum.start",
+                                                        "service_data": {
+                                                            "entity_id": "vacuum.paddington"
+                                                        }
+                                                    },
+                                                    "type": "custom:button-card"
+                                                },
+                                                {
+                                                    "color": "auto",
+                                                    "entity": "vacuum.paddington",
+                                                    "icon": "mdi:pause",
+                                                    "show_name": false,
+                                                    "size": "25%",
+                                                    "tap_action": {
+                                                        "action": "call-service",
+                                                        "service": "vacuum.stop",
+                                                        "service_data": {
+                                                            "entity_id": "vacuum.paddington"
+                                                        }
+                                                    },
+                                                    "type": "custom:button-card"
+                                                },
+                                                {
+                                                    "color": "auto",
+                                                    "entity": "vacuum.paddington",
+                                                    "icon": "mdi:map-marker",
+                                                    "show_name": false,
+                                                    "size": "25%",
+                                                    "tap_action": {
+                                                        "action": "call-service",
+                                                        "service": "vacuum.locate",
+                                                        "service_data": {
+                                                            "entity_id": "vacuum.paddington"
+                                                        }
+                                                    },
+                                                    "type": "custom:button-card"
+                                                },
+                                                {
+                                                    "color": "auto",
+                                                    "entity": "vacuum.robovac",
+                                                    "icon": "mdi:home-map-marker",
+                                                    "show_name": false,
+                                                    "size": "25%",
+                                                    "tap_action": {
+                                                        "action": "call-service",
+                                                        "service": "vacuum.return_to_base",
+                                                        "service_data": {
+                                                            "entity_id": "vacuum.paddington"
+                                                        }
+                                                    },
+                                                    "type": "custom:button-card"
+                                                }
+                                            ],
+                                            "type": "horizontal-stack"
+                                        }
+                                    ],
+                                    "mode": "vertical",
+                                    "style": "ha-card {\n     padding-bottom: 20px;\n    }\n.card-header{\n     margin-bottom: -20px;\n    }\nha-card {\n    background-color: var(--primary-background-color);\n    border-radius: 15px;\n    margin: 10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }    \n",
+                                    "type": "custom:stack-in-card"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        }
+                    ],
+                    "custom_header": {
+                        "background": "rgba(155, 155, 155, 0.25)",
+                        "button_text": {
+                            "options": "{{ hours24 }}:{{ minutesLZ }}"
+                        },
+                        "compact_mode": true
+                    },
+                    "icon": "mdi:remote",
+                    "path": "default_view",
+                    "resources": null,
+                    "title": "Home"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "content": "# Home Conditions\n",
+                                    "style": {
+                                        ".": "ha-card {\n  margin: 10px 0px 0px 0px;\n  box-shadow: none;\n}\n",
+                                        "ha-markdown": {
+                                            "$": "h1 {\n  font-size: 20px !important;\n  font-weight: 500 !important;\n  padding: 0px 0px 0px 8px !important;\n  border-left: 3px solid #ffcc00;\n  color: var(--card-header-text-color);\n}\n"
+                                        }
+                                    },
+                                    "type": "markdown"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "person.jose_herrera"
+                                        },
+                                        {
+                                            "entity": "person.juan_apestegui"
+                                        }
+                                    ],
+                                    "style": "ha-card {\n    background-color: var(--primary-background-color);\n    border-radius: 15px;\n    margin: 10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }      \n",
+                                    "type": "glance"
+                                },
+                                {
+                                    "color_thresholds": [
+                                        {
+                                            "color": "#f39c12",
+                                            "value": 10
+                                        },
+                                        {
+                                            "color": "#d35400",
+                                            "value": 20
+                                        },
+                                        {
+                                            "color": "#c0392b",
+                                            "value": 30
+                                        }
+                                    ],
+                                    "entities": [
+                                        "sensor.xiaomi_airpurifier_air_quality_pm25"
+                                    ],
+                                    "show": {
+                                        "labels": true
+                                    },
+                                    "style": "ha-card {\n    background-color: var(--primary-background-color);\n    border-radius: 15px;\n    margin: 10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }      \n",
+                                    "type": "custom:mini-graph-card"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entities": [
+                                                "sensor.xiaomi_airpurifier_temp"
+                                            ],
+                                            "font_size": 75,
+                                            "line_color": "blue",
+                                            "line_width": 8,
+                                            "style": ".name{\n font-size: 13px;\n    }       \n",
+                                            "type": "custom:mini-graph-card"
+                                        },
+                                        {
+                                            "entities": [
+                                                "sensor.xiaomi_airpurifier_humidity"
+                                            ],
+                                            "font_size": 75,
+                                            "line_color": "var(--accent-color)",
+                                            "line_width": 8,
+                                            "style": ".name{\n font-size: 13px;\n    }  \n",
+                                            "type": "custom:mini-graph-card"
+                                        }
+                                    ],
+                                    "mode": "horizontal",
+                                    "style": "ha-card {\n    background-color: var(--primary-background-color);\n    border-radius: 15px;\n    margin: 10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }      \n",
+                                    "type": "custom:stack-in-card"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.speedtest_download",
+                                            "icon": "mdi:download"
+                                        },
+                                        {
+                                            "entity": "sensor.speedtest_upload",
+                                            "icon": "mdi:upload"
+                                        },
+                                        {
+                                            "entity": "sensor.speedtest_ping"
+                                        }
+                                    ],
+                                    "show_icon": true,
+                                    "show_state": true,
+                                    "style": "ha-card {\n    background-color: var(--primary-background-color);\n    border-radius: 15px;\n    margin: 10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }      \n",
+                                    "type": "glance"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "content": "# Outside Conditions\n",
+                                    "style": {
+                                        ".": "ha-card {\n  margin: 10px 0px 0px 0px;\n  box-shadow: none;\n}\n",
+                                        "ha-markdown": {
+                                            "$": "h1 {\n  font-size: 20px !important;\n  font-weight: 500 !important;\n  padding: 0px 0px 0px 8px !important;\n  border-left: 3px solid #ffcc00;\n  color: var(--card-header-text-color);\n}\n"
+                                        }
+                                    },
+                                    "type": "markdown"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "sensor.timenew",
+                                            "icon": "no",
+                                            "name": "Current Time",
+                                            "style": ".value {\n  font-size:25px !important;\n       } \n",
+                                            "type": "entity"
+                                        },
+                                        {
+                                            "entity": "sun.sun",
+                                            "style": "ha-card { \n  margin-left: -40px;\n       } \n.value {\n  font-size:25px !important;\n       } \n",
+                                            "type": "entity"
+                                        }
+                                    ],
+                                    "mode": "horizontal",
+                                    "style": "ha-card {\n    background-color: var(--primary-background-color);\n    border-radius: 15px;\n    margin: 10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }      \n",
+                                    "type": "custom:stack-in-card"
+                                },
+                                {
+                                    "entity": "weather.home",
+                                    "name": "Outside Weather",
+                                    "style": "ha-card {\n    background-color: var(--primary-background-color);\n    border-radius: 15px;\n    margin: 10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }      \n",
+                                    "type": "weather-forecast"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "content": "# Battery Conditions\n",
+                                    "style": {
+                                        ".": "ha-card {\n  margin: 10px 0px 0px 0px;\n  box-shadow: none;\n}\n",
+                                        "ha-markdown": {
+                                            "$": "h1 {\n  font-size: 20px !important;\n  font-weight: 500 !important;\n  padding: 0px 0px 0px 8px !important;\n  border-left: 3px solid #ffcc00;\n  color: var(--card-header-text-color);\n}\n"
+                                        }
+                                    },
+                                    "type": "markdown"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.iphone_battery_level",
+                                            "icon": "mdi:cellphone",
+                                            "name": "iPhone"
+                                        },
+                                        {
+                                            "entity": "sensor.joses_apple_watch_battery_state",
+                                            "icon": "mdi:watch",
+                                            "name": "Watch"
+                                        },
+                                        {
+                                            "entity": "sensor.joses_ipad_battery_level",
+                                            "icon": "mdi:tablet",
+                                            "name": "iPad"
+                                        }
+                                    ],
+                                    "show_state": true,
+                                    "style": "ha-card {\n    background-color: var(--primary-background-color);\n    border-radius: 15px;\n    margin: 10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }      \n",
+                                    "title": "Jose's devices",
+                                    "type": "glance"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.juan_apesteguis_iphone_battery_state_2",
+                                            "icon": "mdi:cellphone",
+                                            "name": "iPhone"
+                                        },
+                                        {
+                                            "entity": "sensor.juans_apple_watch_battery_state_2",
+                                            "icon": "mdi:watch",
+                                            "name": "Watch"
+                                        },
+                                        {
+                                            "entity": "sensor.ipad_de_juan_battery_state_2",
+                                            "icon": "mdi:tablet",
+                                            "name": "iPad"
+                                        }
+                                    ],
+                                    "show_state": true,
+                                    "style": "ha-card {\n    background-color: var(--primary-background-color);\n    border-radius: 15px;\n    margin: 10px;\n    box-shadow: \n      {% if is_state('sun.sun', 'above_horizon') %}\n        -8px -8px 8px 0 rgba(255,255,255,.5),8px 8px 8px 0 rgba(0,0,0,.03);\n      {% else %}\n        -8px -8px 8px 0 rgba(50, 50, 50,.5),8px 8px 8px 0 rgba(0,0,0,.15);\n      {% endif %}   \n }      \n",
+                                    "title": "Juan's devices",
+                                    "type": "glance"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        }
+                    ],
+                    "icon": "mdi:timelapse",
+                    "panel": false
+                }
+            ]
+        }
+    },
+    "key": "lovelace",
+    "version": 1
+}
